@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <title>Ashish</title>
+  <link rel='stylesheet' type='text/css' href='sty.css'>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Spyder IDE</h1>
+<p>Finally I decided to give Spyder IDE5 a go. I installed it in a virtual environment as recomended in the official documentation. 
+
+	My pc runs on PopOS 22 (debian/ubuntu)
+	
+	I installed the IDE using the pip. First create and activate a  virtual environment in which to install Spyder.
+</p>	
+
+
+<article>
+	<p>python3 -m venv spyder-env
+		source spyder-env/bin/activate</p>
+</article>
+	
+
+<p>After activating your environment, to install Spyder:</p>
+<article>
+	<p>pip install spyder</p>
+</article>
+	
+
+
+	
+
+
+<p>I was confused how to use the already existing python and other packages(outside ethe venv) in the new virtual environment. 
+</p>
+<p>Activate the environment using: source spyder-env/bin/activate
+
+	Start a Python interpreter there by running the command python.</p>
+<p>Run this: 
+	<article>
+		<p>import sys; sys.executable</p>
+	</article>
+
+	
+	 This will give a path:
+	 <article>
+		<p>'/home/alex/spyder-env/bin/python'</p>
+	</article>
+	 
+	 
+</p>
+<p>Start Spyder and run the same command import sys; sys.executable in a Console.
+</p>
+<p>If the resulting paths are the same, then Spyder and the package are in the same environment. 
+
+	Otherwise, Install just the spyder-kernels(can be installed using pip) package into the myenv environment, 
+	and set your Python interpreter path in Spyder's Preferences to point to myenv's Python executable.</p>
+
+ 
+
+
+
+
+
+</body>
+</html>
