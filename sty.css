@@ -103,3 +103,29 @@ h2 {
             text-align: center;
 
     }
+    @media (max-width: 768px) {
+        /* Styles for devices with width less than or equal to 768px (e.g., tablets and mobile phones) */
+    }
+    
+    @media (min-width: 769px) {
+        /* Styles for devices with width greater than 768px (e.g., desktop PCs) */
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            font-size: 14px;
+        }
+    }
+    
+    @media (min-width: 769px) {
+        body {
+            font-size: 16px;
+        }
+    }
+    
+    
+    
