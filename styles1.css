@@ -1,0 +1,274 @@
+:root {
+  --background-color: #ffffff;
+  --foreground-color: #092934;
+  --link: #092934;
+  --accent1: #931F1D;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+	  --background-color: #000000;
+	  --foreground-color: #ffffff;
+	  --link: #ffffff;
+	  --accent1: #f4bf75;
+	}
+}
+
+@font-face {
+  font-family: "Libertinus Mono";
+  src: url(font/LibertinusMono-Regular.woff2);
+}
+
+html {
+  padding: 30px;
+}
+
+
+
+.left {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.right {
+  font-size: 14px;
+  color: #666;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  max-width: 800px;
+  font-family: "Libertinus Mono", serif;
+  margin: 0 auto;
+}
+
+ul.links {
+  list-style-type: none; 
+  display: flex; 
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+
+ul {
+  padding: 0 40px;
+}
+
+figure {
+  margin: 20px 0;
+  width: fit-content;
+  border: 1px solid var(--foreground-color);
+  box-shadow: 0px 0px var(--foreground-color);
+  transition: box-shadow 0.1s ease-out;
+}
+
+figure:hover {
+  box-shadow: 4px 4px var(--foreground-color);
+}
+
+figcaption {
+  font-style: italic;
+  margin-top: 0;
+  padding: 10px;
+  border-top: 1px solid var(--foreground-color);
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+code {
+  font-family: "Libertinus Mono", monospace;
+  font-size: 16px;
+}
+
+pre code {
+  display: block;
+  background: none;
+  color: var(--accent1);
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 10px;
+  border: 1px solid;
+  font-family: monospace;
+  font-size: 16px;
+  transition: border 0.1s ease-out;
+}
+
+pre:hover code {
+  border-left: 4px solid var(--accent1);
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid;
+  padding: 4px;
+  text-align: left;
+}
+
+.shout {
+  border-left: 1px solid var(--link);
+  padding: 0px 10px;
+  font-style: italic;
+  transition: border 0.1s ease-out;
+}
+
+.shout h3,
+.shout h4,
+.shout h5,
+.shout h6 {
+  transition: font-weight 0.1s ease-out;
+}
+
+.shout:hover {
+  border-left: 4px solid var(--accent1);
+}
+
+.shout:hover h3,
+.shout:hover h4,
+.shout:hover h5,
+.shout:hover h6 {
+  font-weight: bold;
+}
+
+.closing {
+  font-style: italic;
+  /* border: 1px solid; */
+  opacity: 0.5;
+}
+
+h1 {
+  padding: 20px;
+  font-weight: lighter;
+  font-size: 32px;
+  /*border: 1px solid;*/
+  text-align: left;
+}
+
+h2 {
+  border: 1px solid;
+  text-align: center;
+  font-weight: lighter;
+  padding: 10px;
+  margin: 30px 0;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: var(--accent1);
+  font-weight: lighter;
+}
+
+
+
+a {
+  color: var(--link);
+  transition: background 0.05s ease-out, box-shadow 0.05s ease-out;
+  padding: 1px;
+}
+
+a:hover {
+  background: var(--accent1);
+  padding: 4px 1px;
+  color: var(--background-color);
+  text-decoration: none;
+}
+
+li {
+	margin: 10px 0;
+}
+
+.small-gif {
+  border: none;
+  padding: 5px;
+}
+
+.small-gif-link:hover {
+  background: none;
+}
+
+.embed {
+  border: 1px solid;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  transition: box-shadow 0.1s ease-out;
+}
+
+.embed:hover {
+  box-shadow: 4px 4px var(--foreground-color);
+}
+
+#header {
+  display: flex;
+  border-right: 1px solid;
+}
+
+#header a {
+  font-family: "Libertinus Mono", serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-align: center;
+  color: var(--foreground-color);
+  flex-basis: 100%;
+  background: none;
+  padding: 6px;
+  border: none;
+  border: 1px solid;
+  border-right: none;
+  cursor: pointer;
+  transition: box-shadow 0.05s ease-out, background 0.05s ease-out;
+}
+
+#header a:hover {
+  background: var(--accent1);
+  color: var(--background-color);
+  border: 1px solid var(--foreground-color);
+  border-right: none;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 700px) {
+  #header {
+    display: grid;
+    border: none;
+    border: 1px solid;
+    border-bottom: none;
+  }
+
+   #header a {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid;
+  }
+
+  #header a:hover {
+    border: none;
+    border-bottom: 1px solid var(--foreground-color);
+  }
+
+}
+
+#content-container {
+  transition: opacity 0.1s ease-out;
+}
+
+#header:hover~#content-container h1 {
+  box-shadow: none;
+}
+
+#header:hover~#content-container {
+  opacity: 0.75;
+}
