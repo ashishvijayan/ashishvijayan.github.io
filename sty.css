@@ -9,6 +9,15 @@ body {
     padding: 0 10px;
 }
 
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+
 a {
     color: darkblue;
     text-decoration: none;
