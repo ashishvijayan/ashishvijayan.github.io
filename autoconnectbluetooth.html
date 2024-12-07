@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <title>Ashish</title>
+  <link rel='stylesheet' type='text/css' href='styles1.css'>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <a href="index.html" class="home-icon">
+    <i class="fas fa-home"></i> 
+  </a>
+
+</head>
+<body>
+
+
+
+<h2>Bluetooth autoconnection problem on Pop OS/Ubuntu</h2> 
+
+<h3>Step 1</h3> 
+<p>Open a text editor and populate it with below script and  save it  /home/username/connect_myairpods.sh
+   <br> Dont forget to update the 'username'. 
+    <br>Find MAC-address of the bluetooth device from the bluetooth settings (when connected to PC). 
+</p>
+
+<p><i>#!/usr/bin/bash <br>
+    bluetoothctl trust MAC-address<br>
+    bluetoothctl disconnect MAC-address<br>
+    bluetoothctl connect MAC-address
+</i></p>
+
+
+
+<p>Go to location of the script in terminal and run: <br>
+<i>chmod +x connect_myairpods.sh</i></p>
+
+<h3>Step 2</h3>
+
+<p>Make desktop file and save it at  /usr/share/application/myairpods.desktop</p>
+
+<p><i>
+#!/usr/bin/env xdg-open<br>
+[Desktop Entry]<br>
+Version=1.0<br>
+Type=Application<br>
+Terminal=false<br>
+Name[en_US]= my airpods<br>
+Icon=/path/to/your/icon.png<br>
+Exec=/home/username/connect_myairpods.sh<br>
+Comment[en_US]=connect bt speaker
+</i></p>
+
+<p>Go to location of the desktop file  and run: <br> <i>chmod +x myairpods.desktop</i> </p>
+
+<p>Close the terminal. An icon called 'my airpods' will be present in your applications. (Restart your pc if icon is not present).
+Just click on the icon to connect to your bluetooth device. </p>
+
+
+</body>
+</html>
